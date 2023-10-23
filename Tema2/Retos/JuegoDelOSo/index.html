@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OSO</title>
+</head>
+
+<body>
+
+    <p id="txt">
+    <p>
+
+        <script>
+            let tablero = new Array();
+            let maxx = 5;
+            let maxy = 5;
+
+            function aleatorio(min, max) {
+                var horquilla = max - min;
+                return Math.round(Math.random() * horquilla + min);
+            }
+
+            function rellena() {
+                for (let i = 0; i < maxy; i++) {
+                    tablero[i] = [];
+                    for (let j = 0; j < maxx; j++) {
+                        if (aleatorio(1, 3) === 1) {
+                            tablero[i][j] = 'O';
+                        } else {
+                            tablero[i][j] = 'S';
+                        }
+                    }
+                }
+            }
+            function solitario() {
+                for (let i = 0; i < maxy; i++) {
+                    for (let j = 0; j < maxx; j++) {
+                        if (tablero[i][j] === 'O') {
+                            if (j + 2 < maxx && tablero[i][j + 1] === 'S' && tablero[i][j + 2] === 'O') {
+                                console.log("Palabra 'oso' encontrada de (" + i + ", " + j + ") a (" + i + ", " + (j + 2) + ").");
+                            }
+                            if (i + 2 < maxy && tablero[i + 1][j] === 'S' && tablero[i + 2][j] === 'O') {
+                                console.log("Palabra 'oso' encontrada de (" + i + ", " + j + ") a (" + (i + 2) + ", " + j + ").");
+                            }
+                        }
+                    }
+                }
+            }
+            function imprimirTablero(tablero) {
+                for (let i = 0; i < maxy; i++) {
+                    console.log(tablero[i].join(' '));
+                }
+            }
+            rellena();
+            console.log("Tablero inicial:");
+            imprimirTablero(tablero);
+            solitario();
+            
+
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //¿Serías capaz en un array de nombres de localizar la persona más popular?
+        var nombres = ["Juan", "María", "Pedro", "Ana", "Carlos", "Juan", "María", "Juan", "Pedro", "Laura", "María", "Carlos"];
+        function NombreMasPopular() {
+            var contador = {};
+            var nombreMasPopular = "";
+            var frecuenciaMasPopular = 0;
+
+            for (var i = 0; i < nombres.length; i++) {
+                var nombre = nombres[i];
+                if (contador[nombre]) {
+                    contador[nombre]++;
+                } else {
+                    contador[nombre] = 1;
+                }
+                if (contador[nombre] > frecuenciaMasPopular) {
+                    nombreMasPopular = nombre;
+                    frecuenciaMasPopular = contador[nombre];
+                }
+            }
+            return nombreMasPopular;
+        }
+        var nombrePopular = NombreMasPopular();
+        console.log("El nombre más popular es: " + nombrePopular);
+
+    </script>
+    
+</body>
+</html>

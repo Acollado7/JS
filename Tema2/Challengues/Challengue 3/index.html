@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function generarNumerosAleatoriosUnicos(cantidad, minimo, maximo) {
+    if (cantidad > (maximo - minimo + 1) || maximo < minimo) {
+        return null; // No se pueden generar números únicos en el rango dado
+    }
+
+    const numerosUnicos = new Set();
+
+    while (numerosUnicos.size < cantidad) {
+        const numeroAleatorio = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+        numerosUnicos.add(numeroAleatorio);
+    }
+
+    return Array.from(numerosUnicos);
+}
+
+const numerosAleatoriosUnicos = generarNumerosAleatoriosUnicos(100, 1, 1000);
+
+console.log(numerosAleatoriosUnicos);
+
+    </script>
+</body>
+</html>

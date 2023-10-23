@@ -1,0 +1,44 @@
+body{
+    padding: 50px;
+    width: 90%;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#buscador {
+    width: 100%;
+    text-align: center;
+}
+#iconos_nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+footer{
+    background-color: beige;
+    width: 100%;
+    padding: 20px;
+}
+article img {
+    width: 50%; 
+}
+.iconos {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#iconos img {
+    margin-right: 20px; 
+}

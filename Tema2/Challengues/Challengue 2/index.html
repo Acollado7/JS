@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Array de nombres
+        var nombres = ["Juan", "María", "Pedro", "Ana", "Carlos", "Juan", "María", "Juan", "Pedro", "Laura", "Carlos"];
+        
+        function NombresMasPopulares(n) {
+            var contador = {};
+
+            // Contar la frecuencia de cada nombre
+            for (var i = 0; i < nombres.length; i++) {
+                var nombre = nombres[i];
+                if (contador[nombre]) {
+                    contador[nombre]++;
+                } else {
+                    contador[nombre] = 1;
+                }
+            }
+
+            // Ordenar los nombres por frecuencia en orden descendente
+            var nombresOrdenados = Object.keys(contador).sort(function(a, b) {
+                return contador[b] - contador[a];
+            });
+
+            // Tomar los primeros n nombres
+            var nombresPopulares = nombresOrdenados.slice(0, n);
+
+            return nombresPopulares;
+        }
+
+        // Llamar a la función para encontrar los tres nombres más populares
+        var nombresPopulares = NombresMasPopulares(3);
+
+        console.log("Los tres nombres más populares son:");
+        for (var i = 0; i < nombresPopulares.length; i++) {
+            console.log(nombresPopulares[i]);
+        }
+    </script>
+</body>
+</html>
